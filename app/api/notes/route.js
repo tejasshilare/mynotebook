@@ -9,7 +9,6 @@ export async function POST(request) {
     await Note.create({ title, description });
     return NextResponse.json({ message: "Note Created" }, { status: 201 });
   } catch (error) {
-    // Handle the error here, for example, log it and return an error response
     console.error("An error occurred in POST:", error);
     return NextResponse.json(
       { error: "Internal Server Error" },
@@ -24,7 +23,6 @@ export async function GET() {
     const notes = await Note.find();
     return NextResponse.json({ notes });
   } catch (error) {
-    // Handle the error here, for example, log it and return an error response
     console.error("An error occurred in GET:", error);
     return NextResponse.json(
       { error: "Internal Server Error" },

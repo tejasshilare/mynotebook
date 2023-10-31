@@ -8,7 +8,6 @@ const apiUrl = process.env.NEXT_PUBLIC_PORT_URL || 3000;
 const getNotes = async () => {
   try {
     const res = await fetch(`${apiUrl}/api/notes`, {
-      method: "GET",
       cache: "no-store",
     });
     if (!res.ok) {
@@ -28,7 +27,7 @@ export default async function NotesList() {
       {notes.map((t) => (
         <div
           key={t._id}
-          className="p-4 border border-slate-300 my-3 flex justify-between gap-5 items-start"
+          className="p-4 border rounded-md border-slate-300 my-3 flex justify-between gap-5 items-start transition duration-150 hover:bg-red-50 hover:scale-105"
         >
           <div>
             <h2 className="font-bolt text-2xl">{t.title}</h2>

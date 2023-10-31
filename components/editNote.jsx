@@ -50,7 +50,7 @@ export default function EditNote({ id, title, description }) {
       ></input>
       <button
         type="submit"
-        className="bg-green-600 font-bold text-white py-3 px-6 w-fit"
+        className="bg-green-600 hover:scale-105 transition-all font-bold text-white py-3 px-6 w-fit"
       >
         Update
       </button>
